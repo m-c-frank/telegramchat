@@ -121,3 +121,33 @@ Now, your Telegram bot should be able to receive messages and send them to the s
 
 License
 This project is licensed under the MIT License.
+
+---
+
+the above was github copilot
+
+but it the bot.py didnt work.
+
+the docker worked perfectly
+
+#todo
+
+- [ ] fix bot.py
+- [ ] make telegrambot a docker container
+
+
+---
+chatgpt:
+https://chatgpt.com/share/f590cd3f-098c-4d8a-afcb-6d45ada245bf
+
+didnt work or at least no quick fix found
+
+then i looked at this:
+
+https://github.com/python-telegram-bot/python-telegram-bot
+
+then got here:
+
+https://python-telegram-bot.org/
+
+and just did it manually lol
