@@ -4,10 +4,11 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
 import os
 import dotenv
+from llmfun import openai_define_russian_word
 
 dotenv.load_dotenv()
 
-TELEGRAM_BOT_TOKEN = os.getenv('API_KEY')
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_API_KEY')
 
 # Configure logging
 logging.basicConfig(
@@ -30,8 +31,9 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def post_message_to_server(message: str):
     try:
         response = requests.post(SERVER_URL, json={'message': message})
+        definition = openai_define_russian_word(message)
         if response.status_code == 200:
-            return 'Message posted successfully.'
+            return f'Message posted successfully.: {definition}'
         else:
             return f'Failed to post message. Status code: {response.status_code}'
     except requests.RequestException as e:
