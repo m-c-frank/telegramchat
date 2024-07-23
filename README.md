@@ -132,8 +132,8 @@ the docker worked perfectly
 
 #todo
 
-- [ ] fix bot.py
-- [ ] make telegrambot a docker container
+- [x] fix bot.py
+- [ ] make telegrambot a docker container -> why?
 
 
 ---
